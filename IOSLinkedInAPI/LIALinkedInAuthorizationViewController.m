@@ -132,19 +132,19 @@ BOOL handlingRedirectURL;
     }
 }
 
-- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
-    NSURL *requestURL = webView.URL;
-    NSString *url = [requestURL absoluteString];
-    
-    //prevent loading URL if it is the redirectURL
-    handlingRedirectURL = [url hasPrefix:self.application.redirectURL];
-    
-    if (handlingRedirectURL) {
-        decisionHandler(WKNavigationActionPolicyCancel);
-    } else {
-        decisionHandler(WKNavigationActionPolicyAllow);
-    }
-}
+//- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+//    NSURL *requestURL = webView.URL;
+//    NSString *url = [requestURL absoluteString];
+//    
+//    //prevent loading URL if it is the redirectURL
+//    handlingRedirectURL = [url hasPrefix:self.application.redirectURL];
+//    
+//    if (handlingRedirectURL) {
+//        decisionHandler(WKNavigationActionPolicyCancel);
+//    } else {
+//        decisionHandler(WKNavigationActionPolicyAllow);
+//    }
+//}
 
 - (NSString *)extractGetParameter: (NSString *) parameterName fromURL:(NSURL *)url {
     NSMutableDictionary *mdQueryStrings = [[NSMutableDictionary alloc] init];
