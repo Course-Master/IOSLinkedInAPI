@@ -125,11 +125,12 @@ BOOL handlingRedirectURL;
             }
         }
     }
-    if (handlingRedirectURL) {
-        decisionHandler(WKNavigationActionPolicyAllow);
-    } else {
-        decisionHandler(WKNavigationActionPolicyCancel);
-    }
+    decisionHandler(WKNavigationActionPolicyAllow);
+//    if (handlingRedirectURL) {
+//        decisionHandler(WKNavigationActionPolicyAllow);
+//    } else {
+//        decisionHandler(WKNavigationActionPolicyCancel);
+//    }
 }
 
 //- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
