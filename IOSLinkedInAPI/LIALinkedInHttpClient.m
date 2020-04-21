@@ -74,7 +74,7 @@
   NSString *url = [NSString stringWithFormat:accessTokenUrl, authorizationCode, self.application.redirectURL, self.application.clientId, self.application.clientSecret, self.application.grantedAccessString];
 
 #ifdef isSessionManager // check if should use AFHTTPSessionManager or AFHTTPRequestOperationManager
-    [self POST:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [self POST:url parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         [self storeCredentials:responseObject];
         success(responseObject);
