@@ -159,7 +159,7 @@ BOOL handlingRedirectURL;
     return [mdQueryStrings objectForKey:parameterName];
 }
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
     // Turn off network activity indicator upon failure to load web view
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     
